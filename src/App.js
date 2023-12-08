@@ -125,7 +125,7 @@ const App = () => {
   );
 };
 
-// Define tus componentes separadamente
+// Define tus componentes separadamentee
 
 function Home({ usuarioObj,isLoggedIn,handleLogin,handleLogout, isNoticias }) {
 
