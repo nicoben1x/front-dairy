@@ -18,6 +18,7 @@ function ConsumirApi2({ isLoggedIn, usuarioObj }) {
 
   const pedidoEmail = () => {
     const productos = selectedItems.map(selected => ({
+      codigo: selected.item.code,
       producto: selected.item.description,
       cantidad: selected.quantity,
       precio: selected.item.dealerPrice.toString().replace('.', ','), // Formatear el precio con coma en lugar de punto
@@ -118,7 +119,7 @@ function ConsumirApi2({ isLoggedIn, usuarioObj }) {
               <ul>
                 {selectedItems.map((selected, index) => (
                   <li key={index}>
-                    Producto: {selected.item.description}, Cantidad: {selected.quantity}, Precio: ${selected.totalPrice.toLocaleString('es-ES')}.
+                    Código: {selected.item.code}, Producto: {selected.item.description}, Cantidad: {selected.quantity}, Precio: ${selected.totalPrice.toLocaleString('es-ES')}.
                   </li>
                 ))}
               </ul>
