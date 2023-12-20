@@ -9,7 +9,7 @@
 // IP de Maquina Local
 // http://192.168.100.40
 
-// IP de Maquina del Trabajo
+// IP de Maquina del Trabajoo
 // http://192.168.1.26
 
 // IP backend Dairy apiUrl
