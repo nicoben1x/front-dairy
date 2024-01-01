@@ -43,6 +43,7 @@ import ConsumirLibro from './components/API/ConsumirLibro';
 import JumpToFirstMatchExample from './components/API/showsearch/YourComponent.tsx';
 
 import ExcelPrecios from './components/ExcelPrecios/ExcelPrecios.js';
+import Library from './components/Library/Library.js';
 
 
 const App = () => {
@@ -117,6 +118,7 @@ const App = () => {
         <Route path="/noticia/:id" element={<NoticiaIndividual />} />
         <Route path="/noticiasformedit/:id"  element={<NuevoNoticiaFormEdit />} />
         <Route path="/excelprecios" element={<ExcelPrecios />} />
+        <Route path="/panel" element={<Library />} />
 
         <Route path="/libro/:kkey" element={<JumpToFirstMatchExample />} />
         

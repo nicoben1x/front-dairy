@@ -67,6 +67,15 @@ function Navbar({ isLoggedIn, usuarioObj, handleLogin, handleLogout }) {
 
       )}
 
+      
+            {/*Solo se renderiza si esta un usuario logeado y si es rol Cliente */}
+            {isLoggedIn && usuarioObj && usuarioObj.rol === 'Cliente' && (
+         <li onClick={() => navigate('/panel')}>
+         <a href='#'>Panel</a>
+       </li>
+
+      )}
+
        
 
          
