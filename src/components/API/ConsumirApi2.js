@@ -33,6 +33,7 @@ function ConsumirApi2({ isLoggedIn, usuarioObj }) {
     const dataToSend = {
       selectedItems: productos,
       usuariopedido: usuarioObj.nombre_completo || "?",
+      clienteEmail: usuarioObj.email || "?",
       precioTotalFinal: precioTotalFinalFormatted // Usar el precio total final formateado
     };
   
