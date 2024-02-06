@@ -119,10 +119,10 @@ const App = () => {
         <Route path="/noticiasform" element={<NuevoNoticiaForm />} />
         <Route path="/noticia/:id" element={<NoticiaIndividual />} />
         <Route path="/noticiasformedit/:id"  element={<NuevoNoticiaFormEdit />} />
-        <Route path="/excelprecios" element={<ExcelPrecios />} />
+        <Route path="/excelprecios" element={<ExcelPrecios usuarioObj={usuarioObj} isLoggedIn={isLoggedIn}/>} />
         <Route path="/panel" element={<Library />} />
         <Route path="/sonusers" element={<SonUsers />} />
-        <Route path="/espanel" element={<EsPanel />} />
+        <Route path="/espanel" element={<EsPanel usuarioObj={usuarioObj} isLoggedIn={isLoggedIn}/>} />
 
 
 

@@ -2,12 +2,17 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { apiUrl } from "../API/ApiConfig"
 import './ExcelPrecios.css';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
-const ExcelPrecios = () => {
+const ExcelPrecios = ({ usuarioObj, isLoggedIn }) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [fileUploadSuccess, setFileUploadSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Nuevo estado para controlar la pantalla de carga
+
+
+  const navigate = useNavigate(); // Obtiene la función de navegación
+
 
 
   const handleFileChange = (event) => {
@@ -56,6 +61,19 @@ const ExcelPrecios = () => {
   }, [uploadSuccess]);
 
   useEffect(() => {
+
+     // Verificar si hay información de usuario en el almacenamiento local
+     const storedIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+     const storedUsuarioObj = JSON.parse(localStorage.getItem('usuarioObj'));
+
+
+     // Si no hay un usuario autenticado, redirigir a la página de inicio
+     if (!storedIsLoggedIn || !storedUsuarioObj) {
+         navigate('/');
+     }
+
+
+
     // Mostrar la alerta cuando fileUploadSuccess sea true
     if (fileUploadSuccess) {
      

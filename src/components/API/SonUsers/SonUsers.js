@@ -4,13 +4,27 @@ import PropTypes from 'prop-types';
 import { apiUrl } from "../ApiConfig"
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
-function SonUsers() {
+function SonUsers({ usuarioObj, isLoggedIn }) {
 
     const [sonusers, setSonusers] = useState([]);
 
     const navigate = useNavigate(); // Obtiene la función de navegación
 
     useEffect(() => {
+
+           // Verificar si hay información de usuario en el almacenamiento local
+           const storedIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+           const storedUsuarioObj = JSON.parse(localStorage.getItem('usuarioObj'));
+   
+   
+           // Si no hay un usuario autenticado, redirigir a la página de inicio
+           if (!storedIsLoggedIn || !storedUsuarioObj) {
+               navigate('/');
+           }
+
+
+
+
         // Realiza una solicitud GET a la API de noticias
         fetch(`${apiUrl}/api-get-sonusers.php`)
           .then((response) => response.json())
