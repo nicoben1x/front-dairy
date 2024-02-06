@@ -45,6 +45,8 @@ import JumpToFirstMatchExample from './components/API/showsearch/YourComponent.t
 import ExcelPrecios from './components/ExcelPrecios/ExcelPrecios.js';
 import Library from './components/Library/Library.js';
 
+import SonUsers from './components/API/SonUsers/SonUsers.js';
+import EsPanel from './components/API/EsPanel/EsPanel.js';
 
 const App = () => {
 
@@ -119,6 +121,10 @@ const App = () => {
         <Route path="/noticiasformedit/:id"  element={<NuevoNoticiaFormEdit />} />
         <Route path="/excelprecios" element={<ExcelPrecios />} />
         <Route path="/panel" element={<Library />} />
+        <Route path="/sonusers" element={<SonUsers />} />
+        <Route path="/espanel" element={<EsPanel />} />
+
+
 
         <Route path="/libro/:kkey" element={<JumpToFirstMatchExample />} />
         

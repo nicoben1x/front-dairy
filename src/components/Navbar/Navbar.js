@@ -96,10 +96,18 @@ function Navbar({ isLoggedIn, usuarioObj, handleLogin, handleLogout }) {
 
       )}
 
-          {/*Solo se renderiza si esta un usuario logeado y si es rol Jefe */}
-          {isLoggedIn && usuarioObj && (usuarioObj.rol === 'Jefe' || usuarioObj.rol === 'Mod') && (
+          {/*Solo se renderiza si esta un usuario logeado y si es rol Mod */}
+          {isLoggedIn && usuarioObj && (usuarioObj.rol === 'Mod') && (
          <li onClick={() => navigate('/excelprecios')}>
          <a href='#'>Excel</a>
+       </li>
+
+      )}
+
+               {/*Solo se renderiza si esta un usuario logeado y si es rol Jefe */}
+               {isLoggedIn && usuarioObj && (usuarioObj.rol === 'Jefe') && (
+         <li onClick={() => navigate('/espanel')}>
+         <a href='#'>Panel</a>
        </li>
 
       )}
